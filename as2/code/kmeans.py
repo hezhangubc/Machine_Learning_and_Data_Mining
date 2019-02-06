@@ -44,7 +44,7 @@ class Kmeans:
         return np.argmin(dist2, axis=1)
     
     def error(self, X):
-        N, D = X.shape     
+        N, D = X.shape
         means = self.means
         dist2 = euclidean_dist_squared(X, means)    
         dist2[np.isnan(dist2)] = np.inf

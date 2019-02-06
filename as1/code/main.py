@@ -145,7 +145,7 @@ if __name__ == "__main__":
         X = dataset["X"]
         y = dataset["y"]
 
-        model = DecisionTree(max_depth=15,stump_class=DecisionStumpInfoGain)
+        model = DecisionTree(max_depth=2,stump_class=DecisionStumpInfoGain)
         model.fit(X, y)
 
         y_pred = model.predict(X)

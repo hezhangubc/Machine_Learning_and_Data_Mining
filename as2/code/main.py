@@ -329,6 +329,7 @@ if __name__ == '__main__':
         for i in range(50):
             model = Kmeans(4)
             model.fit(X)
+            error_minimum = np.inf
             error = model.error(X)
             if error <= error_minimum:
                 error_minimum = error
@@ -339,7 +340,8 @@ if __name__ == '__main__':
         fname = os.path.join("..", "figs", "kmeans_lowest_error.png")
         plt.savefig(fname)
         print("\nFigure saved as '%s'" % fname)
-                        
+
+                 
             
             
 
@@ -355,6 +357,7 @@ if __name__ == '__main__':
             for i in range(50):
                 model = Kmeans(k+1)
                 model.fit(X)
+                error_minimum = np.inf
                 error = model.error(X)
                 if error < error_minimum:
                     error_minimum = error
